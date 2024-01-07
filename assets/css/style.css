@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'ITC';
+    src: url('../fonts/ITC Avant Garde Gothic Bold.otf');
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'ITC', "Arial", sans-serif;
+    background-color: black;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .menu-toggle {
+    cursor: pointer;
+    display: none;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-size: 0.9em;
+    font-family: 'ITC';
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #878787;
+    font-size: smaller;
+    font-family: 'ITC';
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 42px;
+      left: 0;
+      background-color: rgb(8, 8, 8);
+      width: 100%;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .bar {
+      background-color: white;
+      transition: 0.4s ease;
+    }
+  
+    .bar.open {
+      transform: rotate(180deg);
+    }
+  
+    .background-image {
+      width: 100%;
+      margin-top: 30%;
+    }
+  
+    .centered-text {
+      font-size: 1.5em;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      padding-bottom: 25px; 
+    }
+    .centered-text2 {
+        font-size: 1.5em;
+        top: 70%;
+        left: 50%;
+        position: absolute; 
+      }
+  }
+  
+  .background-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .centered-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888888;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'ITC';
+  }
+  .centered-text2 {
+    display: block;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #888888;
+    font-size: smaller;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
