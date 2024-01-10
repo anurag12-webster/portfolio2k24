@@ -1,9 +1,16 @@
+
+
 @font-face {
   font-family: "Sohne";
   src: url("../fonts/TestSöhne-Extraleicht.otf");
+  
+  font-family: "Source serif pro";
+  src: url("../fonts/source-serif-pro.regular.otf");
 
   font-family: "ITC";
   src: url("../fonts/ITC\ Avant\ Garde\ Gothic\ Bold.otf");
+
+
 }
 
 body {
@@ -236,16 +243,21 @@ b{
 }
 
 /* Projects */
+
+
 .main{
   max-width: 1200px;
   margin: 0 auto;
+  
 }
 
 h1 {
-    font-size: 24px;
-    font-weight: 100;
+    font-family: "ITC";
+    font-size: 20px;  
     text-align: center;
-    font-family: "Sohne";
+    color: white;
+    display: flex;
+    padding-left: 1rem;
 }
 
 img {
@@ -262,11 +274,11 @@ img {
 
 .card_buttons a i{
   color: rgba(255, 255, 255, 0.5);
+  margin-right: 1rem;
 }
 
-
-.btn:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+.card_buttons a:hover i{
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .cards {
@@ -276,6 +288,7 @@ img {
   margin: 0;
   padding: 0;
   justify-content: space-between; 
+  
 }
 
 .cards_item {
@@ -284,6 +297,8 @@ img {
   flex: 1 0 100%; 
   box-sizing: border-box; 
 }
+
+
 
 @media (min-width: 40rem) {
   .cards_item {
@@ -308,8 +323,6 @@ img {
   height: 100%; 
 }
 
-
-
 .card_content {
   padding: 1rem;
   background: black;
@@ -317,17 +330,31 @@ img {
 
 .card_title {
   color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 0px;
+  font-family: 'ITC';
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 .card_text {
   color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;    
-  font-weight: 400;
+  font-family:'ITC';
+  opacity: 0.6;
+  font-weight: 100;  
+  font-size: small;
+
 } 
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cards_item.slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
