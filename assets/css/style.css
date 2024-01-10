@@ -1,195 +1,333 @@
 @font-face {
-    font-family: 'ITC';
-    src: url('../fonts/ITC Avant Garde Gothic Bold.otf');
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'ITC', "Arial", sans-serif;
-    background-color: black;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
+  font-family: "Sohne";
+  src: url("../fonts/TestSöhne-Extraleicht.otf");
+
+  font-family: "ITC";
+  src: url("../fonts/ITC\ Avant\ Garde\ Gothic\ Bold.otf");
+}
+
+body {
+  margin: 0;
+  font-family: "ITC", "Arial", sans-serif;
+  background-color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.name {
+  font-size: 0.9em;
+  font-family: "ITC";
+  color: #878787;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #878787;
+  font-size: medium;
+  font-family: "ITC";
+  font-size: smaller;
+}
+.nav-links a:hover {
+  transition: 0.5s ease-in-out;
+  animation-delay: 1s;
+  color: white;
+  border-bottom: 2px solid rgb(44, 44, 44);
+  border-left: 2px solid rgb(44, 44, 44);
+  padding: 9px;
+}
+.nav-links a:active {
+  transition: 0.5s ease-in-out;
+  color: black;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid rgb(0, 0, 0);
+  padding: 9px;
+  background-color: white;
+}
+@media screen and (max-width: 768px) {
   .menu-toggle {
-    cursor: pointer;
-    display: none;
-  }
-  
-  .bar {
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
-  }
-  
-  .profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .name {
-    font-size: 0.9em;
-    font-family: 'ITC';
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin-right: 20px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #878787;
-    font-size: smaller;
-    font-family: 'ITC';
-    
-  }
-  
-  @media screen and (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 42px;
-      left: 0;
-      background-color: rgb(8, 8, 8);
-      width: 100%;
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin: 10px 0;
-    }
-  
-    .bar {
-      background-color: white;
-      transition: 0.4s ease;
-    }
-  
-    .bar.open {
-      transform: rotate(180deg);
-    }
-  
-    .background-image {
-      width: 100%;
-      margin-top: 30%;
-    }
-  
-    .centered-text {
-      font-size: 1.5em;
-      top: 50%;
-      left: 50%;
-      position: absolute;
-      padding-bottom: 25px; 
-    }
-    .centered-text2 {
-        font-size: 1.5em;
-        top: 70%;
-        left: 50%;
-        position: absolute; 
-      }
-  }
-  
-  .background-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .centered-text {
-    display: block;
-    position: absolute;
-    padding-bottom: 15px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #888888;
-    font-size: 2em;
-    text-align: center;
-    font-family: 'ITC';
-  }
-  .centered-text2 {
-    display: block;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #888888;
-    font-size: smaller;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
   }
 
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: white;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .bar {
+    background-color: rgb(138, 138, 138);
+    transition: 0.4s ease;
+  }
+
+  .bar.open {
+    transform: rotate(180deg);
+  }
+
+  .background-image {
+    width: 100%;
+    margin-top: 30%;
+  }
+
+  .centered-text {
+    font-size: 0.6em;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-bottom: 25px;
+    display: block;
+  }
+  .centered-text2 {
+    font-size: 1.5em;
+    top: 70%;
+    left: 50%;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .project {
+    width: 100%; 
+  }
+}
+
+.background-image {
+  width: 100%;
+  height: 80%;
+  opacity: 0.1;
+}
+
+.centered-text {
+  display: block;
+  position: absolute;
+  padding-bottom: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #888888;
+  font-size: 2em;
+  text-align: center;
+  font-family: "ITC";
+}
+.centered-text2 {
+  display: block;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #888888;
+  font-size: smaller;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 /* scroll arrow 
  */
 body {
-    background: #000;
+  background: #000;
 }
 
-.arrow, .arrow:before {
-    position: absolute;
-    left: 50%;
+.arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
 }
 
 .arrow {
-    width: 20px;
-    height: 20px;
-    bottom: 30px;
-    margin: -20px 0 0 -20px;
-    transform: rotate(45deg); 
-    border-left: none;
-    border-top: none;
-    border-right: 2px #fff solid;
-    border-bottom: 2px #fff solid;
+  width: 10px;
+  height: 10px;
+  bottom: 10%;
+  margin: -20px 0 0 -20px;
+  transform: rotate(45deg);
+  border-right: 2px #fff solid;
+  border-bottom: 2px #fff solid;
 }
 
 .arrow:before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    margin: -10px 0 0 -10px;
-    border-left: none;
-    border-top: none;
-    border-right: 1px #fff solid;
-    border-bottom: 1px #fff solid;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-name: arrow;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin: -10px 0 0 -10px;
+  border-left: none;
+  border-top: none;
+  border-right: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
 }
 
 @keyframes arrow {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 0;
-        transform: translate(-10px, -10px);
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
+  }
 }
+
+.section1{
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+b{
+    animation: cursor-blink 1.2s steps(2) infinite;
+}
+
+/* Projects */
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    font-family: "Sohne";
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card_buttons {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+}
+
+.card_buttons a i{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between; 
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+  flex: 1 0 100%; 
+  box-sizing: border-box; 
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    flex: 1 0 calc(50% - 2rem); 
+    margin: 1rem; 
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    flex: 1 0 calc(50% - 2rem); 
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%; 
+}
+
+
+
+.card_content {
+  padding: 1rem;
+  background: black;
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+} 

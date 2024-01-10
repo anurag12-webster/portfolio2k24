@@ -1,0 +1,32 @@
+<!-- FILEPATH: /C:/Users/ADMIN/Documents/Edwix/Portfolio 2024/html/Projects.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous Calls</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <h1>{{ message }}</h1>
+
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myController', function($scope, $http) {
+            $scope.message = "Loading...";
+
+            $http.get('https://api.example.com/data')
+                .then(function(response) {
+                    $scope.message = response.data;
+                })
+                .catch(function(error) {
+                    $scope.message = "Error: " + error.statusText;
+                });
+        });
+    </script>
+</body>
+
+</html>
